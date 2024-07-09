@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite parallel = "tests" name="Suite"> <!-- parallel = "tests" will runn classes parallely, "methods" will run all methods -->
+	
+	<groups>
+		<run>
+			<include name="orderDetail"/>
+		</run>
+	</groups>
+	
+  <test thread-count="5" name="Forward ordering flow"><!-- 5 browsers/ instances can run at a time in this test -->
+    <classes>
+      <class name="SeleniumJava.TestNgFramework.standaloneFrameWork"/>
+    </classes>
+  </test> <!-- Test -->
+  
+      <test thread-count="5" name="Error validations ">
+    <classes>
+		<class name="SeleniumJava.TestNgFramework.loginErrorHandling"/>
+    </classes>
+    </test>
+
+</suite> <!-- Suite -->
